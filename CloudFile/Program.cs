@@ -1,6 +1,13 @@
+using CloudFile.Data;
+using CloudFile.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IFileRepo, FileRepo>();
+builder.Services.AddScoped<IFileManager , FileManager >();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
